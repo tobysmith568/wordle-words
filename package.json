@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "wordle-words",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "prettier": "@tobysmith568/prettier-config",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@tobysmith568/prettier-config": "^2.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
