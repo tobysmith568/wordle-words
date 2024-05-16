@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - renovate/*
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_call:
+
+env:
+  NODE_VERSION: 18
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  run:
+    name: Run
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run
+        run: npm run start
