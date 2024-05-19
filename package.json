@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "prettier": "@tobysmith568/prettier-config",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/main.ts"
   },
   "devDependencies": {
     "@tobysmith568/prettier-config": "^2.1.0",
