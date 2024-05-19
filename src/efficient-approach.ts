@@ -1,4 +1,4 @@
-import { allWords } from "./words";
+import { allWords } from "./words.ts";
 
 const badLetters = ["j", "q", "v", "x", "z"];
 const goodLetters = ["a", "e", "i", "o", "u", "r", "s"];

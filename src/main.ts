@@ -1,4 +1,4 @@
-import { generateMatches } from "./efficient-approach";
+import { generateMatches } from "./efficient-approach.ts";
 
 console.time("Execution time");
 
