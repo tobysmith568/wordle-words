@@ -6,10 +6,9 @@ An attempt to find the best words to start with when playing Wordle.
 
 Find a word or words that are most likely to help the player win the game.
 
-- The word(s) must contain all of the vowels
-- The word(s) must not contain any letter more than once
+- The word(s) must contain all of the pre-defined 'good' letters
 - The words must not contain any of the pre-defined 'bad' letters
-- The words must contain the all of the pre-defined 'good' letters
+- The word(s) must not contain any letter more than once
 
 ## Running locally
 
@@ -26,14 +25,25 @@ npm start
 ```
 [
   [ 'ourie', 'packs' ],
+  [ 'remou', 'sabin' ],
+  [ 'roues', 'tabid' ],
+  [ 'roues', 'tachi' ],
+  [ 'rouet', 'sabin' ],
+  [ 'roule', 'sabin' ],
+  [ 'rudie', 'sabot' ],
+  [ 'ruice', 'sabot' ],
+  [ 'ruote', 'sabin' ],
+  [ 'sieur', 'tacho' ],
   [ 'pause', 'robin' ],
   [ 'raise', 'ghoul' ],
   [ 'raise', 'bound' ],
-  [ 'suite', 'broad' ]
+  [ 'raise', 'gumbo' ],
+  [ 'suite', 'broad' ],
+  [ 'ratio', 'bused' ]
 ]
 ```
 
-Execution time: ~100ms
+Execution time: ~80ms
 
 </details>
 

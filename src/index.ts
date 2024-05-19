@@ -1,10 +1,10 @@
-import { generateMatchesWithAllVowels } from "./efficient-approach";
+import { generateMatches } from "./efficient-approach";
 
 console.time("Execution time");
 
 const allowedWordCount = 2;
 
-const matches = generateMatchesWithAllVowels(allowedWordCount);
+const matches = generateMatches(allowedWordCount);
 console.log(matches);
 
 console.timeEnd("Execution time");

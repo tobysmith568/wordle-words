@@ -1,13 +1,12 @@
 import { allWords } from "./words";
 
-const vowels = ["a", "e", "i", "o", "u"];
-const allVowelsMask = (1 << vowels.length) - 1;
-
 const badLetters = ["j", "q", "v", "x", "z"];
-const goodLetters = ["r", "s"];
+const goodLetters = ["a", "e", "i", "o", "u", "r", "s"];
+const goodLettersMask = (1 << goodLetters.length) - 1;
 
-const maskContainsAllVowels = (mask: number) => mask === allVowelsMask;
-const maskAlreadyContainsVowel = (mask: number, vowelIndex: number) => mask & (1 << vowelIndex);
+const maskContainsAllGoodLetters = (mask: number) => mask === goodLettersMask;
+const maskAlreadyContainsGoodLetter = (mask: number, vowelIndex: number) =>
+  mask & (1 << vowelIndex);
 const distinct = <T>(letter: T, index: number, array: T[]) => array.indexOf(letter) === index;
 
 const allLettersAreUnique = (letters: string) => {
@@ -37,17 +36,17 @@ const updateMaskWithWord = (word: string, initialMask: number) => {
       break;
     }
 
-    const vowelIndex = vowels.indexOf(letter);
-    if (vowelIndex === -1) {
+    const goodLetterIndex = goodLetters.indexOf(letter);
+    if (goodLetterIndex === -1) {
       continue;
     }
 
-    if (maskAlreadyContainsVowel(mask, vowelIndex)) {
+    if (maskAlreadyContainsGoodLetter(mask, goodLetterIndex)) {
       isInvalidWord = true;
       break;
     }
 
-    mask |= 1 << vowelIndex;
+    mask |= 1 << goodLetterIndex;
   }
 
   return { mask, isInvalidWord };
@@ -70,7 +69,7 @@ const wordLoop = (
 
     const letters = wordsSoFar.join("") + word;
     if (
-      maskContainsAllVowels(currentMask) &&
+      maskContainsAllGoodLetters(currentMask) &&
       allLettersAreUnique(letters) &&
       containsAllGoodLetters(letters)
     ) {
@@ -87,7 +86,7 @@ const wordLoop = (
   }
 };
 
-export const generateMatchesWithAllVowels = (allowedWordCount: number) => {
+export const generateMatches = (allowedWordCount: number) => {
   const matches: string[][] = [];
 
   for (let i = 0; i < allWords.length; i++) {
