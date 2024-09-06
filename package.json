@@ -11,7 +11,7 @@
     "build": "rollup -c"
   },
   "devDependencies": {
-    "@rollup/plugin-swc": "^0.3.0",
+    "@rollup/plugin-swc": "^0.4.0",
     "@tobysmith568/prettier-config": "^2.1.0",
     "rollup": "^4.17.2",
     "typescript": "^5.4.5"
